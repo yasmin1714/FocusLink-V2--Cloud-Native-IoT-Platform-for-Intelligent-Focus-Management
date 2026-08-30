@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% set xp = metrics.minutes_focused * 10 %}
+
+{% if xp < 5000 %}
+    {% set current_stage = "Egg" %}
+    {% set stage_svg = "egg.svg" %}
+    {% set stage_color = "#78909c" %}
+    {% set prev_xp_cap = 0 %}
+    {% set next_xp_cap = 5000 %}
+    {% set next_stage = "Larva" %}
+{% elif xp < 20000 %}
+    {% set current_stage = "Larva" %}
+    {% set stage_svg = "larva.svg" %}
+    {% set stage_color = "#8bc34a" %}
+    {% set prev_xp_cap = 5000 %}
+    {% set next_xp_cap = 20000 %}
+    {% set next_stage = "Caterpillar" %}
+{% elif xp < 40000 %}
+    {% set current_stage = "Caterpillar" %}
+    {% set stage_svg = "caterpillar.svg" %}
+    {% set stage_color = "#4caf50" %}
+    {% set prev_xp_cap = 20000 %}
+    {% set next_xp_cap = 40000 %}
+    {% set next_stage = "Chrysalis" %}
+{% elif xp < 100000 %}
+    {% set current_stage = "Chrysalis" %}
+    {% set stage_svg = "chrysalis.svg" %}
+    {% set stage_color = "#00bcd4" %}
+    {% set prev_xp_cap = 40000 %}
+    {% set next_xp_cap = 100000 %}
+    {% set next_stage = "Butterfly" %}
+{% elif xp < 200000 %}
+    {% set current_stage = "Butterfly" %}
+    {% set stage_svg = "butterfly.svg" %}
+    {% set stage_color = "#ab47bc" %}
+    {% set prev_xp_cap = 100000 %}
+    {% set next_xp_cap = 200000 %}
+    {% set next_stage = "Golden Butterfly" %}
+{% else %}
+    {% set current_stage = "Golden Butterfly" %}
+    {% set stage_svg = "golden_butterfly.svg" %}
+    {% set stage_color = "#ffb300" %}
+    {% set prev_xp_cap = 200000 %}
+    {% set next_xp_cap = 200000 %}
+    {% set next_stage = "Apex Achieved" %}
+{% endif %}
+
+{% set xp_in_stage = xp - prev_xp_cap %}
+{% set stage_range = next_xp_cap - prev_xp_cap %}
+{% if stage_range > 0 %}
+    {% set raw_progress = (xp_in_stage / stage_range) * 100 %}
+    {% set progress_pct = 100 if raw_progress > 100 else (0 if raw_progress < 0 else raw_progress) %}
+{% else %}
+    {% set progress_pct = 100 %}
+{% endif %}
+
+<div style="font-family: 'Google Sans', sans-serif; color: #1e293b; padding: 28px; background: #f8fafc; min-height: 100vh; display: flex; flex-direction: column; gap: 24px;">
+
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; padding: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -40px; right: -40px; width: 220px; height: 220px; background: {{ stage_color }}; opacity: 0.12; filter: blur(60px); border-radius: 50%;"></div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div style="width: 80px; height: 80px; border-radius: 20px; background: #f1f5f9; padding: 10px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); border: 2px solid {{ stage_color }};">
+                    <img src="{{ url_for('static', filename='img/' ~ stage_svg) }}" alt="{{ current_stage }}" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div>
+                    <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #64748b; font-weight: 800;">Current Rank</span>
+                    <h1 style="margin: 0; font-size: 32px; font-weight: 900; letter-spacing: -0.5px; color: #0f172a;">{{ current_stage }}</h1>
+                </div>
+            </div>
+            
+            <div style="text-align: right;">
+                <div style="font-size: 36px; font-weight: 900; color: #6366f1;">{{ xp }} <span style="font-size: 16px; color: #64748b; font-weight: 700;">XP</span></div>
+                <div style="font-size: 13px; color: #64748b; font-weight: 500;">1 Min Focused = 10 XP</div>
+            </div>
+        </div>
+
+        <div>
+            <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; margin-bottom: 8px;">
+                <span style="color: {{ stage_color }}"><i class="bi bi-controller"></i> Evolution Progress to {{ next_stage }}</span>
+                <span style="color: #0f172a;">{{ "%.1f"|format(progress_pct) }}%</span>
+            </div>
+            <div style="width: 100%; height: 16px; background: #e2e8f0; border-radius: 12px; padding: 3px;">
+                <div style="width: {{ progress_pct }}%; height: 100%; background: linear-gradient(90deg, #6366f1, {{ stage_color }}); border-radius: 8px; transition: width 0.5s ease-in-out;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #64748b; margin-top: 8px; font-weight: 600;">
+                <span>{{ xp_in_stage }} / {{ stage_range }} Stage XP</span>
+                <span>Next Milestone: {{ next_xp_cap }} XP</span>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 28px; padding-top: 20px; border-top: 1px solid #f1f5f9;">
+            <div style="text-align: center; opacity: {{ 1 if xp >= 0 else 0.35 }}; flex: 1;">
+                <img src="{{ url_for('static', filename='img/egg.svg') }}" style="width: 32px; height: 32px; margin-bottom: 4px;">
+                <div style="font-size: 11px; font-weight: 800; color: #334155;">Egg</div>
+            </div>
+            <div style="text-align: center; opacity: {{ 1 if xp >= 5000 else 0.35 }}; flex: 1;">
+                <img src="{{ url_for('static', filename='img/larva.svg') }}" style="width: 32px; height: 32px; margin-bottom: 4px;">
+                <div style="font-size: 11px; font-weight: 800; color: #334155;">Larva</div>
+            </div>
+            <div style="text-align: center; opacity: {{ 1 if xp >= 20000 else 0.35 }}; flex: 1;">
+                <img src="{{ url_for('static', filename='img/caterpillar.svg') }}" style="width: 32px; height: 32px; margin-bottom: 4px;">
+                <div style="font-size: 11px; font-weight: 800; color: #334155;">Caterpillar</div>
+            </div>
+            <div style="text-align: center; opacity: {{ 1 if xp >= 40000 else 0.35 }}; flex: 1;">
+                <img src="{{ url_for('static', filename='img/chrysalis.svg') }}" style="width: 32px; height: 32px; margin-bottom: 4px;">
+                <div style="font-size: 11px; font-weight: 800; color: #334155;">Chrysalis</div>
+            </div>
+            <div style="text-align: center; opacity: {{ 1 if xp >= 100000 else 0.35 }}; flex: 1;">
+                <img src="{{ url_for('static', filename='img/butterfly.svg') }}" style="width: 32px; height: 32px; margin-bottom: 4px;">
+                <div style="font-size: 11px; font-weight: 800; color: #334155;">Butterfly</div>
+            </div>
+            <div style="text-align: center; opacity: {{ 1 if xp >= 200000 else 0.35 }}; flex: 1;">
+                <img src="{{ url_for('static', filename='img/golden_butterfly.svg') }}" style="width: 32px; height: 32px; margin-bottom: 4px;">
+                <div style="font-size: 11px; font-weight: 800; color: #334155;">Golden Butterfly</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border-left: 5px solid #0284c7;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase;">Minutes Focused</span>
+                <i class="bi bi-clock-history" style="font-size: 22px; color: #0284c7;"></i>
+            </div>
+            <div style="font-size: 32px; font-weight: 900; color: #0f172a;">{{ metrics.minutes_focused }} <span style="font-size: 14px; font-weight: 600; color: #64748b;">mins</span></div>
+            <div style="font-size: 12px; color: #0284c7; margin-top: 6px; font-weight: 600;"><i class="bi bi-cpu"></i> All time tracked time</div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border-left: 5px solid #8b5cf6;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase;">Avg / Session</span>
+                <i class="bi bi-speedometer" style="font-size: 22px; color: #8b5cf6;"></i>
+            </div>
+            <div style="font-size: 32px; font-weight: 900; color: #0f172a;">{{ metrics.average_per_session }} <span style="font-size: 14px; font-weight: 600; color: #64748b;">mins</span></div>
+            <div style="font-size: 12px; color: #8b5cf6; margin-top: 6px; font-weight: 600;"><i class="bi bi-graph-up"></i> Average session length</div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border-left: 5px solid #16a34a;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase;">Full Sessions</span>
+                <i class="bi bi-check-circle-fill" style="font-size: 22px; color: #16a34a;"></i>
+            </div>
+            <div style="font-size: 32px; font-weight: 900; color: #0f172a;">{{ metrics.successful_sessions }} <span style="font-size: 14px; font-weight: 600; color: #64748b;">done</span></div>
+            <div style="font-size: 12px; color: #16a34a; margin-top: 6px; font-weight: 600;"><i class="bi bi-shield-check"></i> Target time reached fully</div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border-left: 5px solid #dc2626;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase;">Aborted Sessions</span>
+                <i class="bi bi-exclamation-octagon-fill" style="font-size: 22px; color: #dc2626;"></i>
+            </div>
+            <div style="font-size: 32px; font-weight: 900; color: #0f172a;">{{ metrics.aborted_sessions }} <span style="font-size: 14px; font-weight: 600; color: #64748b;">cut short</span></div>
+            <div style="font-size: 12px; color: #dc2626; margin-top: 6px; font-weight: 600;"><i class="bi bi-stop-circle"></i> Ended early on FocusLink Hardware</div>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); display: flex; flex-direction: column; align-items: center;">
+            <h3 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 800; color: #0f172a; width: 100%; text-align: left;"><i class="bi bi-pie-chart-fill" style="color: #6366f1; margin-right: 8px;"></i>Session Completion</h3>
+            <div style="position: relative; width: 200px; height: 200px;">
+                <canvas id="sessionPieChart"></canvas>
+            </div>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+            <h3 style="margin: 0 0 20px 0; font-size: 16px; font-weight: 800; color: #0f172a;"><i class="bi bi-bar-chart-line-fill" style="color: #0284c7; margin-right: 8px;"></i>Metamorphosis Progression XP Trajectory</h3>
+            <div style="height: 200px; width: 100%;">
+                <canvas id="levelBarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 14px; background: #fef3c7; border: 1px solid #fde047; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <i class="bi bi-lightbulb-fill" style="font-size: 24px; color: #d97706;"></i>
+        </div>
+        <div>
+            <h4 style="margin: 0 0 4px 0; font-size: 15px; font-weight: 800; color: #0f172a;">Metamorphosis & Hardware Insight</h4>
+            <p style="margin: 0; font-size: 13px; color: #475569; line-height: 1.5;">
+                {% if metrics.aborted_sessions == 0 and metrics.successful_sessions > 0 %}
+                    Perfect discipline! You hit 100% of your chosen session limits without triggering early interrupts on the FocusLink Hardware device.
+                {% elif metrics.successful_sessions > metrics.aborted_sessions %}
+                    Great consistency! Even when sessions are aborted midway, every minute logged on FocusLink still awards XP toward your next stage.
+                {% else %}
+                    Multiple sessions ended before reaching target time limit. FocusLink continues crediting partial minutes, but completing full sessions speeds up evolution!
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const successful = {{ metrics.successful_sessions }};
+        const aborted = {{ metrics.aborted_sessions }};
+
+        const ctxPie = document.getElementById('sessionPieChart').getContext('2d');
+        new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed Full Session', 'Aborted Midway'],
+                datasets: [{
+                    data: [successful, aborted],
+                    backgroundColor: ['#16a34a', '#dc2626'],
+                    borderWidth: 0,
+                    hoverOffset: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#475569',
+                            font: { family: 'Google Sans', size: 12, weight: 'bold' }
+                        }
+                    }
+                },
+                cutout: '68%'
+            }
+        });
+
+        const userXP = {{ xp }};
+        const ctxBar = document.getElementById('levelBarChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Egg', 'Larva', 'Caterpillar', 'Chrysalis', 'Butterfly', 'Golden Butterfly'],
+                datasets: [
+                    {
+                        label: 'Required XP',
+                        data: [0, 5000, 20000, 40000, 100000, 200000],
+                        backgroundColor: '#e2e8f0',
+                        borderRadius: 6
+                    },
+                    {
+                        label: 'Current XP',
+                        data: [userXP, userXP, userXP, userXP, userXP, userXP],
+                        backgroundColor: '#6366f1',
+                        borderRadius: 6
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#64748b', font: { family: 'Google Sans', weight: 'bold' } }
+                    },
+                    y: {
+                        grid: { color: '#f1f5f9' },
+                        ticks: { color: '#64748b', font: { family: 'Google Sans' } }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#475569',
+                            font: { family: 'Google Sans', size: 12, weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid p-0">
+
+    <div class="p-5 rounded-4 text-white mb-4 position-relative overflow-hidden"
+        style="background: linear-gradient(135deg, #1e1b4b 0%, #2563eb 100%); border: 1px solid #e2e8f0;">
+        <div
+            style="position: absolute; right: -40px; bottom: -40px; width: 280px; height: 280px; background-color: #38bdf8; opacity: 0.2; border-radius: 50%; filter: blur(40px);">
+        </div>
+
+        <div class="row align-items-center position-relative z-1">
+            <div class="col-lg-8">
+                <span class="badge text-uppercase font-monospace px-3 py-2 mb-3"
+                    style="background-color: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">
+                    IoT Hardware & Gamified System Architecture
+                </span>
+                <h1 class="fw-black display-5 mb-2" style="letter-spacing: -1px;">About FocusLink</h1>
+                <p class="lead text-light opacity-90 mb-0" style="max-width: 650px; font-weight: 500;">
+                    An IoT-assisted hybrid system engineered to curb smartphone-induced digital distraction ("brain
+                    rot") through physical restraint hardware and real-time behavioral gamification.
+                </p>
+            </div>
+            <div class="col-lg-4 text-center d-none d-lg-block">
+                <div class="d-inline-flex align-items-center justify-content-center p-4 rounded-4"
+                    style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <i class="bi bi-router-fill text-info display-1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100"
+                style="background-color: #ffffff; border: 1px solid #e2e8f0;">
+                <div class="d-flex align-items-center justify-content-center text-primary rounded-3 mb-3"
+                    style="width: 48px; height: 48px; background-color: #eff6ff;">
+                    <i class="bi bi-lock-fill fs-3"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-2">IoT Focus Timer</h5>
+                <p class="text-muted small mb-0">A smart IoT device that tracks uninterrupted study sessions,
+                    logging student focus time via ESP32 telemetry while keeping smartphones out of hand.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100"
+                style="background-color: #ffffff; border: 1px solid #e2e8f0;">
+                <div class="d-flex align-items-center justify-content-center text-info rounded-3 mb-3"
+                    style="width: 48px; height: 48px; background-color: #e0f2fe;">
+                    <i class="bi bi-wifi fs-3"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-2">Blynk IoT Sync</h5>
+                <p class="text-muted small mb-0">Low-latency cloud synchronization mapping live capacitive touch sensor
+                    events.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100"
+                style="background-color: #ffffff; border: 1px solid #e2e8f0;">
+                <div class="d-flex align-items-center justify-content-center text-purple rounded-3 mb-3"
+                    style="width: 48px; height: 48px; background-color: #f3e8ff; color: #8b5cf6;">
+                    <i class="bi bi-bar-chart-line-fill fs-3"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-2">Cloud Analytics</h5>
+                <p class="text-muted small mb-0">Tracks session completion ratios, average focus windows, and early
+                    abort triggers.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-4 h-100"
+                style="background-color: #ffffff; border: 1px solid #e2e8f0;">
+                <div class="d-flex align-items-center justify-content-center text-success rounded-3 mb-3"
+                    style="width: 48px; height: 48px; background-color: #dcfce7;">
+                    <i class="bi bi-controller fs-3"></i>
+                </div>
+                <h5 class="fw-bold text-dark mb-2">Butterfly Metamorphosis</h5>
+                <p class="text-muted small mb-0">A 6-tier gamified progression engine converting focus minutes directly
+                    into XP.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4"
+        style="background-color: #ffffff; border: 1px solid #e2e8f0;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="fw-bold text-dark mb-1 d-flex align-items-center gap-2">
+                    <i class="bi bi-trophy-fill text-warning"></i>
+                    <span>Gamification Progression Matrix</span>
+                </h4>
+                <p class="text-muted small mb-0">Conversion Formula: <strong>1 Minute Focused = 10 XP</strong></p>
+            </div>
+            <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2">6 Evolutionary Stages</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0" style="border-color: #f1f5f9;">
+                <thead style="background-color: #f8fafc;">
+                    <tr>
+                        <th class="fw-bold text-secondary small text-uppercase py-3">Stage Icon</th>
+                        <th class="fw-bold text-secondary small text-uppercase py-3">Stage Name</th>
+                        <th class="fw-bold text-secondary small text-uppercase py-3">Required XP</th>
+                        <th class="fw-bold text-secondary small text-uppercase py-3">Focus Time Needed</th>
+                        <th class="fw-bold text-secondary small text-uppercase py-3">Milestone Goal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-3"><img src="{{ url_for('static', filename='img/egg.svg') }}"
+                                style="width: 32px; height: 32px;"></td>
+                        <td class="fw-bold text-dark">Egg</td>
+                        <td><span class="badge bg-light text-dark font-monospace">0 XP</span></td>
+                        <td><span class="fw-semibold text-muted">0 Minutes</span></td>
+                        <td>Starting Baseline Stage</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3"><img src="{{ url_for('static', filename='img/larva.svg') }}"
+                                style="width: 32px; height: 32px;"></td>
+                        <td class="fw-bold text-dark">Larva</td>
+                        <td><span class="badge bg-light text-dark font-monospace">5,000 XP</span></td>
+                        <td><span class="fw-semibold text-primary">500 Minutes</span> (~8.3 hrs)</td>
+                        <td>Unlock Stage 1 Level</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3"><img src="{{ url_for('static', filename='img/caterpillar.svg') }}"
+                                style="width: 32px; height: 32px;"></td>
+                        <td class="fw-bold text-dark">Caterpillar</td>
+                        <td><span class="badge bg-light text-dark font-monospace">20,000 XP</span></td>
+                        <td><span class="fw-semibold text-primary">2,000 Minutes</span> (~33.3 hrs)</td>
+                        <td>Build Habit Routine</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3"><img src="{{ url_for('static', filename='img/chrysalis.svg') }}"
+                                style="width: 32px; height: 32px;"></td>
+                        <td class="fw-bold text-dark">Chrysalis</td>
+                        <td><span class="badge bg-light text-dark font-monospace">40,000 XP</span></td>
+                        <td><span class="fw-semibold text-primary">4,000 Minutes</span> (~66.6 hrs)</td>
+                        <td>Deep Focus Discipline</td>
+                    </tr>
+                    <tr>
+                        <td class="py-3"><img src="{{ url_for('static', filename='img/butterfly.svg') }}"
+                                style="width: 32px; height: 32px;"></td>
+                        <td class="fw-bold text-dark">Butterfly</td>
+                        <td><span class="badge bg-light text-dark font-monospace">100,000 XP</span></td>
+                        <td><span class="fw-semibold text-primary">10,000 Minutes</span> (~166.6 hrs)</td>
+                        <td>Master Attention Span</td>
+                    </tr>
+                    <tr style="background-color: #fffbeb;">
+                        <td class="py-3"><img src="{{ url_for('static', filename='img/golden_butterfly.svg') }}"
+                                style="width: 32px; height: 32px;"></td>
+                        <td class="fw-bold text-amber" style="color: #d97706;">Golden Butterfly</td>
+                        <td><span class="badge bg-warning text-dark font-monospace">200,000 XP</span></td>
+                        <td><span class="fw-bold text-warning-emphasis">20,000 Minutes</span> (~333.3 hrs)</td>
+                        <td><span class="badge bg-warning text-dark">Apex Productive Genius</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="p-4 rounded-4 text-white position-relative overflow-hidden" style="background-color: #1e1b4b;">
+        <div class="row align-items-center">
+            <div class="col-md-9">
+                <h5 class="fw-bold mb-2 d-flex align-items-center gap-2" style="color: #ffffff;">
+                    <i class="bi bi-journal-check text-info"></i>
+                    <span>Empirical Background & Research Foundation</span>
+                </h5>
+                <p class="small text-light opacity-75 mb-0" style="line-height: 1.6;">
+                    Statistical analysis of the <em>Teen Smartphone Addiction Dataset</em> confirms that software-only
+                    productivity apps often fail due to easy bypass options within the same distraction-laden
+                    environment. FocusLink introduces physical boundary separation via an ESP32 microcontroller, proving
+                    that hardware-assisted interventions significantly outperform purely digital locks.
+                </p>
+            </div>
+            <div class="col-md-3 text-end d-none d-md-block">
+                <span class="badge px-3 py-2 text-uppercase font-monospace"
+                    style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);">
+                    ESP32 + Blynk IoT
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

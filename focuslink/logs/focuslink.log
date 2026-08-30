@@ -1,0 +1,204 @@
+[2026-08-08 20:09:46,931] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:09:47,231] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:09:58,426] WARNING in admin_controller: Unauthorized access attempt redirected to login.
+[2026-08-08 20:10:16,447] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:10:22,001] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:12:44,514] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:12:50,741] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:13:44,668] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:13:49,002] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:14:29,551] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:14:40,506] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:14:45,862] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:14:58,728] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:15:04,868] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:15:37,729] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-08 20:16:06,468] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:16:06,762] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-08 20:16:09,067] INFO in admin_controller: Successful login for user: admin
+[2026-08-08 20:16:23,276] INFO in admin_controller: Successful login for user: admin
+[2026-08-08 20:17:50,660] WARNING in app: BLYNK_AUTH_TOKEN environment variable is not set.
+[2026-08-09 07:32:57,363] WARNING in admin_controller: Unauthorized access attempt. Redirecting to login.
+[2026-08-09 07:33:07,618] INFO in admin_controller: Successful login for user: admin
+[2026-08-09 07:33:07,954] ERROR in focuslink_data_controller: Error persisting record to DB: (sqlite3.OperationalError) table focus_link has no column named user_id
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:03:07.953130', '2026-08-09 02:03:07.953143')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-08-09 07:35:36,092] INFO in db_init: Targeting Database URI: sqlite:////Users/yogg/Developer/yasmin/focuslink/data/focuslink.db
+[2026-08-09 07:35:36,093] INFO in db_init: Database tables initialized successfully.
+[2026-08-09 07:35:43,998] INFO in admin_controller: Successful login for user: admin
+[2026-08-09 07:35:44,586] ERROR in focuslink_data_controller: Error persisting record to DB: (sqlite3.OperationalError) table focus_link has no column named user_id
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:05:44.585163', '2026-08-09 02:05:44.585176')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-08-09 07:35:59,456] INFO in db_init: Targeting Database URI: sqlite:////Users/yogg/Developer/yasmin/focuslink/data/focuslink.db
+[2026-08-09 07:35:59,457] INFO in db_init: Database tables initialized successfully.
+[2026-08-09 07:39:00,464] WARNING in admin_controller: Unauthorized access attempt. Cookie: None vs Expected: 325eb0ab4b8044b0598b9030cee36b6fc1b471e94bb38204c01d76b598fc22a0247cedcff66691266a27fff358006d1fb8b25b9192c9bc67253ebca42a18778f
+[2026-08-09 07:39:04,947] INFO in admin_controller: Successful login for user: admin
+[2026-08-09 07:39:05,442] ERROR in focuslink_data_controller: Error persisting record to DB: (sqlite3.OperationalError) table focus_link has no column named user_id
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:09:05.439860', '2026-08-09 02:09:05.439867')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-08-09 07:39:05,443] ERROR in admin_controller: Failed to save snapshot on login: (sqlite3.OperationalError) table focus_link has no column named user_id
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:09:05.439860', '2026-08-09 02:09:05.439867')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2026-08-09 07:42:28,988] INFO in db_init: Targeting Database URI: sqlite:////Users/yogg/Developer/yasmin/focuslink/data/focuslink.db
+[2026-08-09 07:42:28,988] INFO in db_init: Database tables initialized successfully.
+[2026-08-09 07:42:35,210] INFO in db_init: Targeting Database URI: sqlite:////Users/yogg/Developer/yasmin/focuslink/data/focuslink.db
+[2026-08-09 07:42:35,210] INFO in db_init: Database tables initialized successfully.
+[2026-08-09 07:43:04,617] INFO in admin_controller: Admin logged out and session cookies cleared.
+[2026-08-09 07:43:10,208] INFO in admin_controller: Successful login for user: admin
+[2026-08-09 07:43:10,833] INFO in focuslink_data_controller: Database snapshot created for yasminddg@gmail.com
+[2026-08-09 07:43:53,183] INFO in admin_controller: Admin logged out and session cookies cleared.
+[2026-08-09 07:43:58,450] INFO in admin_controller: Successful login for user: admin
+[2026-08-09 07:43:59,060] ERROR in focuslink_data_controller: Error persisting record to DB: (sqlite3.IntegrityError) UNIQUE constraint failed: focus_link.email
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:13:59.059013', '2026-08-09 02:13:59.059034')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-08-09 07:43:59,061] ERROR in admin_controller: Failed to save snapshot on login: (sqlite3.IntegrityError) UNIQUE constraint failed: focus_link.email
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:13:59.059013', '2026-08-09 02:13:59.059034')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-08-09 07:44:07,420] INFO in admin_controller: Admin logged out and session cookies cleared.
+[2026-08-09 07:44:12,283] INFO in admin_controller: Successful login for user: admin
+[2026-08-09 07:44:12,984] ERROR in focuslink_data_controller: Error persisting record to DB: (sqlite3.IntegrityError) UNIQUE constraint failed: focus_link.email
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:14:12.983998', '2026-08-09 02:14:12.984024')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-08-09 07:44:12,985] ERROR in admin_controller: Failed to save snapshot on login: (sqlite3.IntegrityError) UNIQUE constraint failed: focus_link.email
+[SQL: INSERT INTO focus_link (username, email, user_id, device_id, device_name, device_owner, device_email, device_status, minutes_focused, average_per_session, successful_sessions, aborted_sessions, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'yasminddg@gmail.com', '814572', 'n43qEW1wfE', 'FocusLink', 'yasminddg@gmail.com', 'yasminddg@gmail.com', 'offline', 8, 4.0, 1, 1, '2026-08-09 02:14:12.983998', '2026-08-09 02:14:12.984024')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2026-08-09 07:44:22,066] INFO in admin_controller: Admin logged out and session cookies cleared.
+[2026-08-09 07:46:53,439] WARNING in admin_controller: Unauthorized access attempt. Cookie: None vs Expected: 325eb0ab4b8044b0598b9030cee36b6fc1b471e94bb38204c01d76b598fc22a0247cedcff66691266a27fff358006d1fb8b25b9192c9bc67253ebca42a18778f
+[2026-08-09 07:46:54,616] WARNING in admin_controller: Unauthorized access attempt. Cookie: None vs Expected: 325eb0ab4b8044b0598b9030cee36b6fc1b471e94bb38204c01d76b598fc22a0247cedcff66691266a27fff358006d1fb8b25b9192c9bc67253ebca42a18778f
+[2026-08-09 07:46:55,515] WARNING in admin_controller: Unauthorized access attempt. Cookie: None vs Expected: 325eb0ab4b8044b0598b9030cee36b6fc1b471e94bb38204c01d76b598fc22a0247cedcff66691266a27fff358006d1fb8b25b9192c9bc67253ebca42a18778f
+[2026-08-09 07:46:56,400] WARNING in admin_controller: Unauthorized access attempt. Cookie: None vs Expected: 325eb0ab4b8044b0598b9030cee36b6fc1b471e94bb38204c01d76b598fc22a0247cedcff66691266a27fff358006d1fb8b25b9192c9bc67253ebca42a18778f
+[2026-08-09 08:09:41,625] INFO in db_init: Targeting Database URI: sqlite:////Users/yogg/Developer/yasmin/focuslink/data/focuslink.db
+[2026-08-09 08:09:41,625] INFO in db_init: Database tables initialized successfully.
+[2026-08-09 08:09:58,751] WARNING in admin_controller: Unauthorized access attempt for client_code: None
+[2026-08-09 08:10:06,805] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 08:10:07,275] INFO in focuslink_data_controller: DB Snapshot #1 written for yasminddg@gmail.com
+[2026-08-09 08:10:07,292] INFO in host_registry_controller: Host registry updated for client_code: yasminddg@gmail.com
+[2026-08-09 08:10:35,640] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:10:40,271] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 08:10:40,663] INFO in focuslink_data_controller: DB Snapshot #2 written for yasminddg@gmail.com
+[2026-08-09 08:10:40,678] INFO in host_registry_controller: Host registry updated for client_code: yasminddg@gmail.com
+[2026-08-09 08:11:40,777] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:11:46,292] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 08:11:46,777] INFO in focuslink_data_controller: DB Snapshot #3 written for yasminddg@gmail.com
+[2026-08-09 08:11:46,797] INFO in host_registry_controller: Host registry updated for client_code: yasminddg@gmail.com
+[2026-08-09 08:12:31,828] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:13:18,344] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 08:13:18,975] INFO in focuslink_data_controller: DB Snapshot #4 written for yasminddg@gmail.com
+[2026-08-09 08:13:19,000] INFO in host_registry_controller: Host registry updated for client_code: yasminddg@gmail.com
+[2026-08-09 08:19:17,718] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 08:19:22,547] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 08:19:23,002] INFO in focuslink_data_controller: DB Snapshot #5 written for yasminddg@gmail.com
+[2026-08-09 08:19:23,028] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 08:19:43,435] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:19:48,431] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:21:44,898] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 08:21:50,629] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 08:21:51,115] INFO in focuslink_data_controller: DB Snapshot #6 written for yasminddg@gmail.com
+[2026-08-09 08:21:51,138] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 08:21:54,731] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:22:04,616] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 08:22:05,562] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 08:22:08,879] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:22:09,659] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 08:46:14,508] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 08:47:08,776] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 08:47:13,760] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 08:47:14,107] INFO in focuslink_data_controller: DB Snapshot #7 written for yasminddg@gmail.com
+[2026-08-09 08:47:14,122] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 09:00:34,079] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 09:01:11,140] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 09:01:11,602] INFO in focuslink_data_controller: DB Snapshot #8 written for yasminddg@gmail.com
+[2026-08-09 09:01:11,623] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 09:01:14,915] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 09:18:41,738] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 09:18:42,067] INFO in focuslink_data_controller: DB Snapshot #9 written for yasminddg@gmail.com
+[2026-08-09 09:18:42,084] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 09:32:59,117] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 09:32:59,562] INFO in focuslink_data_controller: DB Snapshot #10 written for yasminddg@gmail.com
+[2026-08-09 09:32:59,577] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 09:38:01,742] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 09:38:06,331] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 09:38:06,669] INFO in focuslink_data_controller: DB Snapshot #11 written for yasminddg@gmail.com
+[2026-08-09 09:38:06,683] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 09:38:18,485] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 09:38:28,192] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 09:38:28,548] INFO in focuslink_data_controller: DB Snapshot #12 written for yasminddg@gmail.com
+[2026-08-09 09:38:28,565] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 10:27:23,464] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 11:09:04,880] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 11:09:10,469] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 11:09:10,818] INFO in focuslink_data_controller: DB Snapshot #13 written for yasminddg@gmail.com
+[2026-08-09 11:09:10,835] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 11:09:31,979] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 11:09:40,987] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 11:09:41,307] INFO in focuslink_data_controller: DB Snapshot #14 written for yasminddg@gmail.com
+[2026-08-09 11:09:41,322] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 11:32:29,693] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 11:37:19,865] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 11:37:20,213] INFO in focuslink_data_controller: DB Snapshot #15 written for yasminddg@gmail.com
+[2026-08-09 11:37:20,238] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 11:37:24,232] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 11:38:03,883] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 11:38:04,179] INFO in focuslink_data_controller: DB Snapshot #16 written for yasminddg@gmail.com
+[2026-08-09 11:38:04,203] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 11:52:19,344] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 11:52:25,205] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 11:52:25,532] INFO in focuslink_data_controller: DB Snapshot #17 written for yasminddg@gmail.com
+[2026-08-09 11:52:25,557] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 12:00:18,263] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 12:00:22,963] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:00:23,296] INFO in focuslink_data_controller: DB Snapshot #18 written for yasminddg@gmail.com
+[2026-08-09 12:00:23,315] INFO in host_registry_controller: Host registry updated with encrypted client alias.
+[2026-08-09 12:01:01,319] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 12:18:20,338] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 12:18:55,535] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:18:56,379] INFO in focuslink_data_controller: DB Snapshot #19 written for yasminddg@gmail.com
+[2026-08-09 12:20:10,918] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:20:11,722] INFO in focuslink_data_controller: DB Snapshot #20 written for yasminddg@gmail.com
+[2026-08-09 12:20:52,705] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:20:53,514] INFO in focuslink_data_controller: DB Snapshot #21 written for yasminddg@gmail.com
+[2026-08-09 12:20:54,210] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:20:55,108] INFO in focuslink_data_controller: DB Snapshot #22 written for yasminddg@gmail.com
+[2026-08-09 12:22:38,792] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:22:39,622] INFO in focuslink_data_controller: DB Snapshot #23 written for yasminddg@gmail.com
+[2026-08-09 12:25:35,854] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 12:25:47,460] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:25:48,261] INFO in focuslink_data_controller: DB Snapshot #24 written for yasminddg@gmail.com
+[2026-08-09 12:26:30,442] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 12:27:11,169] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:27:12,036] INFO in focuslink_data_controller: DB Snapshot #25 written for yasminddg@gmail.com
+[2026-08-09 12:41:24,692] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-09 12:41:35,987] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:41:36,775] INFO in focuslink_data_controller: DB Snapshot #26 written for yasminddg@gmail.com
+[2026-08-09 12:50:48,296] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-09 12:50:58,009] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-09 12:50:59,263] INFO in focuslink_data_controller: DB Snapshot #27 written for yasminddg@gmail.com
+[2026-08-09 12:51:43,601] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-19 11:39:29,864] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-19 11:39:56,556] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-19 11:40:08,583] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-19 11:40:50,044] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-19 11:41:53,311] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-19 11:42:03,468] WARNING in admin_controller: Failed authentication attempt for user: admin
+[2026-08-19 11:44:11,230] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-19 11:44:11,901] INFO in focuslink_data_controller: DB Snapshot #28 written for yasminddg@gmail.com
+[2026-08-19 11:49:24,345] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-19 11:52:06,202] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-19 11:52:06,876] INFO in focuslink_data_controller: DB Snapshot #29 written for yasminddg@gmail.com
+[2026-08-19 12:32:37,950] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-27 20:42:41,610] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-27 20:43:27,819] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-27 20:43:28,376] INFO in focuslink_data_controller: DB Snapshot #30 written for yasminddg@gmail.com
+[2026-08-27 21:14:46,985] INFO in admin_controller: Admin user logged out and host cookies purged.
+[2026-08-28 13:09:27,259] WARNING in admin_controller: Unauthorized access attempt for client alias: None
+[2026-08-28 13:20:21,321] INFO in admin_controller: Successful authentication for admin: admin
+[2026-08-28 13:20:21,863] INFO in focuslink_data_controller: DB Snapshot #31 written for yasminddg@gmail.com
+[2026-08-28 14:22:16,473] INFO in admin_controller: Admin user logged out and host cookies purged.

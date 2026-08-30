@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <!-- Dark Lavender / Indigo Base Card -->
+  <rect width="40" height="40" rx="10" fill="#1e1b4b"/>
+  
+  <!-- Active IoT Signal Dot Accent -->
+  <circle cx="31" cy="9" r="3.5" fill="#38bdf8"/>
+  
+  <!-- Stylized Google Sans 'F' -->
+  <path d="M 12 10 
+           H 27 
+           C 28.657 10, 30 11.343, 30 13 
+           C 30 14.657, 28.657 16, 27 16 
+           H 18 
+           V 19.5 
+           H 25 
+           C 26.657 19.5, 28 20.843, 28 22.5 
+           C 28 24.157, 26.657 25.5, 25 25.5 
+           H 18 
+           V 30 
+           C 18 31.657, 16.657 33, 15 33 
+           C 13.343 33, 12 31.657, 12 30 
+           Z" 
+        fill="#ffffff"/>
+</svg>

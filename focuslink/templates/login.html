@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
+    <title>FocusLink | Admin Portal Authentication</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 40px 20px;
+            /* Enhanced outer margin breathability */
+            color: #1e293b;
+        }
+
+        .focuslink-auth-container {
+            width: 100%;
+            max-width: 1100px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(30, 27, 75, 0.12), 0 0 1px 1px rgba(30, 27, 75, 0.05);
+            overflow: hidden;
+        }
+
+        .form-control:focus {
+            border-color: #7c3aed !important;
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12) !important;
+        }
+
+        .btn-focuslink {
+            background-color: #7c3aed;
+            color: #ffffff;
+            font-weight: 500;
+            border-radius: 12px;
+            padding: 12px 24px;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-focuslink:hover {
+            background-color: #6d28d9;
+            color: #ffffff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+        }
+
+        .feature-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 12px 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="focuslink-auth-container">
+        <div class="row g-0" style="min-height: 600px;">
+
+            <!-- Left Panel: Context & Brand Spotlight -->
+            <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between position-relative"
+                style="background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);">
+
+                <!-- Ambient Accent Overlay -->
+                <div
+                    style="position: absolute; top: -10%; right: -10%; width: 300px; height: 300px; background: #ddd6fe; opacity: 0.15; filter: blur(80px); border-radius: 50%; pointer-events: none;">
+                </div>
+                <div
+                    style="position: absolute; bottom: -10%; left: -10%; width: 300px; height: 300px; background: #7c3aed; opacity: 0.2; filter: blur(80px); border-radius: 50%; pointer-events: none;">
+                </div>
+
+                <!-- Top Brand Header -->
+                <div class="d-flex align-items-center gap-3 z-1 mb-4">
+                    <div class="d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <img src="{{ url_for('static', filename='img/favicon.svg') }}" alt="FocusLink Logo" width="48"
+                            height="48" style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));">
+                    </div>
+                    <div>
+                        <h4 class="m-0 fw-bold text-white tracking-wide">FocusLink</h4>
+                        <span class="text-white-50 small fw-medium">IoT-Assisted Focus Platform</span>
+                    </div>
+                </div>
+
+                <!-- Middle Value Proposition -->
+                <div class="my-auto py-3 z-1">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1.5 rounded-pill mb-3"
+                        style="background: rgba(221, 214, 254, 0.1); border: 1px solid rgba(221, 214, 254, 0.2); color: #ddd6fe;">
+                        <i class="bi bi-shield-lock-fill small"></i>
+                        <span class="small fw-bold text-uppercase" style="letter-spacing: 0.5px;">Hardware-Assisted
+                            Security</span>
+                    </div>
+
+                    <h1 class="display-6 fw-bold text-white mb-3" style="line-height: 1.2;">
+                        Reclaim attention.<br>
+                        <span style="color: #ddd6fe;">Eliminate digital noise.</span>
+                    </h1>
+
+                    <p class="text-white-50 mb-4 fs-6" style="max-width: 440px;">
+                        Physical smartphone restriction combined with real-time ESP32 IoT telemetry and analytics.
+                    </p>
+
+                    <!-- Feature Grid -->
+                    <div class="row g-3" style="max-width: 480px;">
+                        <div class="col-6">
+                            <div class="feature-badge d-flex align-items-center gap-2 text-white">
+                                <i class="bi bi-router text-info fs-5"></i>
+                                <span class="small fw-medium">FocusLink Hardware</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="feature-badge d-flex align-items-center gap-2 text-white">
+                                <i class="bi bi-graph-up-arrow text-info fs-5"></i>
+                                <span class="small fw-medium">Blynk Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom System Status Footer -->
+                <div
+                    class="pt-4 border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between z-1 mt-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="d-inline-block rounded-circle bg-success" style="width: 8px; height: 8px;"></span>
+                        <span class="text-white-50 small">Developed By Yasmin D</span>
+                    </div>
+                    <span class="text-white-50 small">v2026.1 Enterprise</span>
+                </div>
+            </div>
+
+            <!-- Right Panel: Authentication Portal -->
+            <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-between bg-white">
+
+                <div class="d-flex justify-content-end mb-3">
+                    <span class="badge rounded-pill text-uppercase px-3 py-2 fw-semibold"
+                        style="background-color: #f1f5f9; color: #475569; letter-spacing: 0.5px;">
+                        <i class="bi bi-shield-check me-1" style="color: #7c3aed;"></i> Admin Gateway
+                    </span>
+                </div>
+
+                <div class="my-auto mx-auto w-100 py-2" style="max-width: 380px;">
+                    <div class="mb-4">
+                        <h2 class="fw-bold text-dark mb-1">Welcome back</h2>
+                        <p class="text-muted small">Authenticate with your administrative credentials to access the
+                            FocusLink portal.</p>
+                    </div>
+
+                    <!-- Jinja Dynamic Flash / Error Alert -->
+                    {% if error %}
+                    <div class="alert alert-danger d-flex align-items-center gap-2 border-0 rounded-3 mb-4" role="alert"
+                        style="background-color: #fef2f2; color: #dc2626;">
+                        <i class="bi bi-exclamation-triangle-fill flex-shrink-0"></i>
+                        <div class="small fw-medium">
+                            {{ error }}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Login Form -->
+                    <form action="{{ url_for('focuslink.login_action') }}" method="POST">
+
+                        <!-- Username Field -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label small fw-bold text-secondary">Username</label>
+                            <div class="position-relative">
+                                <i
+                                    class="bi bi-person position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                                <input type="text"
+                                    class="form-control ps-5 py-2.5 rounded-3 bg-light border-0 text-dark fw-medium"
+                                    id="username" name="username" placeholder="Enter your admin ID" autocomplete="off"
+                                    required style="height: 48px;">
+                            </div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label for="password"
+                                    class="form-label small fw-bold text-secondary m-0">Password</label>
+                            </div>
+                            <div class="position-relative">
+                                <i
+                                    class="bi bi-key position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                                <input type="password"
+                                    class="form-control ps-5 py-2.5 rounded-3 bg-light border-0 text-dark fw-medium"
+                                    id="password" name="password" placeholder="••••••••••••" required
+                                    style="height: 48px;">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="btn btn-focuslink w-100 d-flex align-items-center justify-content-center gap-2 mb-3"
+                            style="height: 48px;">
+                            <span>Authenticate</span>
+                            <i class="bi bi-arrow-right small"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Footer Text -->
+                <div class="text-center mt-3">
+                    <p class="text-muted small m-0">
+                        FocusLink IoT Platform &copy; 2026
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

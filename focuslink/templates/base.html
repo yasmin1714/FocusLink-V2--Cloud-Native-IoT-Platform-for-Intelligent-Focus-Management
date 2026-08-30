@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon.svg') }}">
+    <title>{% block title %}FocusLink IoT Dashboard{% endblock %}</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .app-base-container {
+            width: 80% !important;
+            max-width: 80% !important;
+            margin: 0 auto;
+        }
+
+        .nav-custom-link {
+            color: #64748b;
+            font-weight: 700;
+            font-size: 0.88rem;
+            padding: 8px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid transparent;
+        }
+
+        .nav-custom-link:hover {
+            color: #6366f1;
+            background-color: #f1f5f9;
+            transform: translateY(-1px);
+        }
+
+        .nav-custom-link.active {
+            color: #6366f1;
+            background-color: #eef2ff;
+            border-color: #c7d2fe;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
+        }
+
+        .btn-logout-custom {
+            background-color: #fff1f2;
+            color: #e11d48;
+            border: 1px solid #fecdd3;
+            font-weight: 800;
+            font-size: 0.85rem;
+            border-radius: 12px;
+            padding: 8px 18px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-logout-custom:hover {
+            background-color: #e11d48;
+            color: #ffffff;
+            border-color: #e11d48;
+            box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
+            transform: translateY(-1px);
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+    <header
+        style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0;"
+        class="sticky-top shadow-sm">
+        <div class="app-base-container py-3 d-flex align-items-center justify-content-between">
+
+            <div class="d-flex align-items-center gap-4">
+                <a href="{{ url_for('focuslink.index') }}" class="d-flex align-items-center gap-2 text-decoration-none">
+                    <img src="{{ url_for('static', filename='img/favicon.svg') }}" alt="FocusLink Logo" width="40"
+                        height="40" style="filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.25));">
+                    <div class="d-flex flex-column">
+                        <span class="fw-black fs-5 text-slate-900"
+                            style="letter-spacing: -0.5px; line-height: 1.1; color: #0f172a; font-weight: 900;">FocusLink</span>
+                        <span
+                            style="font-size: 0.65rem; letter-spacing: 0.8px; text-transform: uppercase; color: #7c3aed; font-weight: 800;">IoT
+                            System</span>
+                    </div>
+                </a>
+
+                <div style="width: 1px; height: 26px; background-color: #e2e8f0;"></div>
+
+                <nav class="d-flex align-items-center gap-2">
+                    <a href="{{ url_for('focuslink.index') }}"
+                        class="nav-custom-link {% if active_tab == 'metrics' %}active{% endif %}">
+                        <i class="bi bi-controller fs-6" style="color: #6366f1;"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="{{ url_for('focuslink.about_view') }}"
+                        class="nav-custom-link {% if active_tab == 'about' %}active{% endif %}">
+                        <i class="bi bi-info-circle-fill fs-6" style="color: #0284c7;"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="{{ url_for('focuslink.device_view') }}"
+                        class="nav-custom-link {% if active_tab == 'device' %}active{% endif %}">
+                        <i class="bi bi-router-fill fs-6" style="color: #0284c7;"></i>
+                        <span>Device Status</span>
+                    </a>
+                    <a href="{{ url_for('focuslink.timeline_view') }}"
+                        class="nav-custom-link {% if active_tab == 'timeline' %}active{% endif %}">
+                        <i class="bi bi-clock-history fs-6" style="color: #8b5cf6;"></i>
+                        <span>Timeline Archive</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <a href="{{ url_for('focuslink.logout_action') }}" class="btn-logout-custom">
+                    <i class="bi bi-box-arrow-right fs-6"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="app-base-container py-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

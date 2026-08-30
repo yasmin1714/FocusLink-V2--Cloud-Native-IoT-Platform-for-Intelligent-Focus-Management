@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if tab == 'metrics' %}
+<!-- TAB 1: FOCUS METRICS -->
+<div class="card">
+    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Current Session Metrics</h2>
+    <div class="grid-2x2">
+        <div class="metric-card">
+            <div class="metric-label">Total Minutes Focused</div>
+            <div class="metric-value">{{ metrics.minutes_focused }}</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Average Session Length</div>
+            <div class="metric-value">{{ "%.1f"|format(metrics.average_per_session) }}m</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Successful Sessions</div>
+            <div class="metric-value" style="color: var(--success);">{{ metrics.successful_sessions }}</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Aborted Sessions</div>
+            <div class="metric-value" style="color: var(--danger);">{{ metrics.aborted_sessions }}</div>
+        </div>
+    </div>
+</div>
+
+{% elif tab == 'device' %}
+<!-- TAB 2: LIVE DEVICE DETAILS -->
+<div class="card">
+    <h2 style="margin-top: 0; margin-bottom: 1.5rem;">Hardware & Device Status</h2>
+    
+    <div class="detail-row">
+        <strong>Hardware Status</strong>
+        <span class="badge {% if device.device_status == 'online' %}badge-online{% else %}badge-offline{% endif %}">
+            {{ device.device_status }}
+        </span>
+    </div>
+    <div class="detail-row">
+        <strong>Device ID</strong>
+        <span>{{ device.device_id or 'N/A' }}</span>
+    </div>
+    <div class="detail-row">
+        <strong>User ID</strong>
+        <span>{{ device.user_id or 'N/A' }}</span>
+    </div>
+    <div class="detail-row">
+        <strong>Device Name</strong>
+        <span>{{ device.device_name or 'N/A' }}</span>
+    </div>
+    <div class="detail-row">
+        <strong>Device Owner</strong>
+        <span>{{ device.device_owner or 'N/A' }}</span>
+    </div>
+    <div class="detail-row">
+        <strong>Owner Email</strong>
+        <span>{{ device.device_email or 'N/A' }}</span>
+    </div>
+</div>
+
+{% elif tab == 'timeline' %}
+<!-- TAB 3: TIMELINE ARCHIVE -->
+<div class="card">
+    <h2 style="margin-top: 0; margin-bottom: 1rem;">Database Snapshot History</h2>
+    
+    {% if records %}
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Username</th>
+                <th>Status</th>
+                <th>Focused (min)</th>
+                <th>Avg/Session</th>
+                <th>Success</th>
+                <th>Aborted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in records %}
+            <tr>
+                <td>{{ row.created_at.strftime('%Y-%m-%d %H:%M:%S') if row.created_at else 'N/A' }}</td>
+                <td>{{ row.username }}</td>
+                <td>
+                    <span class="badge {% if row.device_status == 'online' %}badge-online{% else %}badge-offline{% endif %}">
+                        {{ row.device_status }}
+                    </span>
+                </td>
+                <td>{{ row.minutes_focused }}</td>
+                <td>{{ "%.1f"|format(row.average_per_session) }}m</td>
+                <td>{{ row.successful_sessions }}</td>
+                <td>{{ row.aborted_sessions }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="color: var(--text-muted);">No recorded timeline archives found in database.</p>
+    {% endif %}
+</div>
+
+{% endif %}
+
+{% endblock %}
