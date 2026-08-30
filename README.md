@@ -1,4 +1,4 @@
-# 🦋 FocusLink V2 — Cloud-Native IoT Platform for Intelligent Focus Management
+# 🦋 FocusLink V2 - Cloud-Native IoT Platform for Intelligent Focus Management
 
 **An IoT-assisted hardware and cloud platform that physically separates you from your smartphone while digitally tracking, analyzing, and gamifying your focus time.**
 
@@ -11,9 +11,7 @@
 
 ## 🔗 Live Demo
 
-> _Paste your live demo link here_
-
-**Live Demo:** [https://your-live-demo-link-here.com](https://your-live-demo-link-here.com)
+**Live Demo:** (https://youtu.be/aOcFViRBoA8)
 
 ---
 
@@ -38,14 +36,14 @@ FocusLink introduces a **physical touch-based device** that starts, pauses, resu
 
 ## ✨ Features
 
-- 🖐️ **Touch-based interaction** — hold to select session duration, tap to pause/resume, long-press to abort
-- ⏱️ **Configurable focus sessions** — 5 to 120 minutes (default: 30 minutes)
-- 📟 **LCD local feedback** — real-time status and instructions on-device
-- ☁️ **Blynk IoT Cloud integration** — live telemetry sync over Wi-Fi
-- 📊 **Web dashboard** — real-time metrics, analytics, and device status
-- 🕰️ **Timeline archive** — chronological historical session snapshots
-- 🎮 **XP-based gamification** — 1 minute focused = 10 XP
-- 🦋 **6-stage metamorphosis progression** — Egg → Larva → Caterpillar → Chrysalis → Butterfly → Golden Butterfly
+- 🖐️ **Touch-based interaction** - hold to select session duration, tap to pause/resume, long-press to abort
+- ⏱️ **Configurable focus sessions** - 5 to 120 minutes (default: 30 minutes)
+- 📟 **LCD local feedback** - real-time status and instructions on-device
+- ☁️ **Blynk IoT Cloud integration** - live telemetry sync over Wi-Fi
+- 📊 **Web dashboard** - real-time metrics, analytics, and device status
+- 🕰️ **Timeline archive** - chronological historical session snapshots
+- 🎮 **XP-based gamification** - 1 minute focused = 10 XP
+- 🦋 **6-stage metamorphosis progression** - Egg → Larva → Caterpillar → Chrysalis → Butterfly → Golden Butterfly
 
 ---
 
@@ -142,8 +140,6 @@ FocusLink uses **Blynk IoT Cloud** as the synchronization layer between the ESP3
 
 ## 📸 Screenshots
 
-> Add screenshots to a `/screenshots` folder in the repo and update the paths below.
-
 | Login Page | Dashboard | Blynk Cloud Console |
 |------------|-----------|-----------------------|
 | ![Login](./screenshots/login.png) | ![Dashboard](./screenshots/dashboard.png) | ![Blynk](./screenshots/blynk-console.png) |
@@ -163,7 +159,6 @@ git clone https://github.com/yasmin1714/FocusLink-V2--Cloud-Native-IoT-Platform-
 # Navigate into the project
 cd FocusLink-V2--Cloud-Native-IoT-Platform-for-Intelligent-Focus-Management
 
-# Follow the setup instructions in /docs (or add your setup steps here)
 ```
 
 ---
