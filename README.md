@@ -112,7 +112,7 @@ FocusLink uses **Blynk IoT Cloud** as the synchronization layer between the ESP3
 
 ---
 
-## 🎮 Gamification — XP & Metamorphosis
+## 🎮 Gamification - XP & Metamorphosis
 
 **Conversion formula:** `1 minute focused = 10 XP`
 
