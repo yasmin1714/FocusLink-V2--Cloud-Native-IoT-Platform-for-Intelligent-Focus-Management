@@ -17,7 +17,7 @@
 
 ## 📖 Overview
 
-FocusLink tackles smartphone-induced digital distraction with a **physical IoT-based intervention** instead of relying only on software restrictions that are easy to bypass. It pairs an **ESP32-powered hardware device** with a **cloud-connected web dashboard**, turning your uninterrupted focus time into XP through a six-stage **metamorphosis progression system** — from 🥚 Egg all the way to 🦋 Golden Butterfly.
+FocusLink tackles smartphone-induced digital distraction with a **physical IoT-based intervention** instead of relying only on software restrictions that are easy to bypass. It pairs an **ESP32-powered hardware device** with a **cloud-connected web dashboard**, turning your uninterrupted focus time into XP through a six-stage **metamorphosis progression system** from 🥚 Egg all the way to 🦋 Golden Butterfly.
 
 > *"Physically separate the distraction from the user while digitally tracking and rewarding focused time."*
 
@@ -30,7 +30,7 @@ FocusLink tackles smartphone-induced digital distraction with a **physical IoT-b
 
 ## ✅ The Solution
 
-FocusLink introduces a **physical touch-based device** that starts, pauses, resumes, and aborts focus sessions — while streaming live telemetry to the cloud for analytics and gamified rewards.
+FocusLink introduces a **physical touch-based device** that starts, pauses, resumes, and aborts focus sessions while streaming live telemetry to the cloud for analytics and gamified rewards.
 
 ---
 
